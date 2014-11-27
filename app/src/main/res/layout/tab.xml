@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@color/primary_material_light">
+
+    <TextView
+        android:id="@+id/lblTitle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingBottom="5dp"
+        android:gravity="center"
+        android:textColor="@android:color/black"/>
+
+    <View
+        android:id="@+id/selection"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_alignBottom="@+id/lblTitle"
+        android:background="@color/primary_material_dark"/>
+
+</RelativeLayout>
