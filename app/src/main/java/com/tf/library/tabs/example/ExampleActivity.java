@@ -52,14 +52,15 @@ public class ExampleActivity extends ActionBarActivity {
         // Set up the tabs
         final Tabs tabs = (Tabs) findViewById(R.id.tabs);
         tabs.setViewPager(mViewPager);
+    
+	// Optionally setup the colors
         tabs.setBackgroundColor(getResources().getColor(R.color.primary_material_light));
         tabs.setTitleColor(getResources().getColor(android.R.color.black));
         tabs.setSelectionColor(getResources().getColor(R.color.primary_material_dark));
 
 
         // When swiping between different sections, select the corresponding
-        // tab. We can also use ActionBar.Tab#select() to do this if we have
-        // a reference to the Tab.
+        // tab.
         mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
