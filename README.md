@@ -3,6 +3,8 @@ tfTabs
 
 A clone of `ActionBarTabs` in Android but is compatible with `Toolbar`
 
+![Screenshot](./Screenshot.png)
+
 You need to copy the following files from the given example code into your project:
 
     src/com.tf.library.tabs.Tabs.java

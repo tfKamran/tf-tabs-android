@@ -2,28 +2,28 @@
 <pre-dex-items>
 
     <item
-        dex="/home/kamran/Workspace/TabsLibrary/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-c550f6a49f6fd5edaca7cf56d808d8a05db640e1.jar"
+        dex="/home/kamran/Workspace/tfTabs/app/build/intermediates/pre-dexed/debug/classes-04b0da85a4cd6929aa785cb1dfcf15e22090fc45.jar"
+        jar="/home/kamran/Workspace/tfTabs/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
+    <item
+        dex="/home/kamran/Workspace/tfTabs/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-c550f6a49f6fd5edaca7cf56d808d8a05db640e1.jar"
         jar="/home/kamran/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="21.0.2"
         sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e"/>
     <item
-        dex="/home/kamran/Workspace/TabsLibrary/app/build/intermediates/pre-dexed/debug/classes-738739bd7e750840d6497bcbdb405e69fbd397ad.jar"
-        jar="/home/kamran/Workspace/TabsLibrary/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.0.2"
-        sha1="95fd37732ec852e99f07eeb516a3650172f1d136"/>
-    <item
-        dex="/home/kamran/Workspace/TabsLibrary/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-1e002820657a30207b22fcb169ab91733f15a609.jar"
-        jar="/home/kamran/Workspace/TabsLibrary/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
+        dex="/home/kamran/Workspace/tfTabs/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-07e6c733ed7a537ce058469d47ae697d8a33a407.jar"
+        jar="/home/kamran/Workspace/tfTabs/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
         jumboMode="false"
         revision="21.0.2"
         sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
     <item
-        dex="/home/kamran/Workspace/TabsLibrary/app/build/intermediates/pre-dexed/debug/classes-6597cded5bdbf5db4b91c67b8c1e722de3826622.jar"
-        jar="/home/kamran/Workspace/TabsLibrary/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
+        dex="/home/kamran/Workspace/tfTabs/app/build/intermediates/pre-dexed/debug/classes-4c24fad09fa065d83fa41c6370ebb61c465a5e58.jar"
+        jar="/home/kamran/Workspace/tfTabs/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/classes.jar"
         jumboMode="false"
         revision="21.0.2"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
+        sha1="95fd37732ec852e99f07eeb516a3650172f1d136"/>
 
 </pre-dex-items>
