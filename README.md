@@ -41,3 +41,5 @@ Add a few lines in your activity code:
 And you're done!
 
 **Note**: Before `tabs.setViewPager(mViewPager);` you must have your `FragmentPagerAdapter` in your `ViewPager`
+
+Tags: #ActionBarTab, #Tabs, #Android, #Toolbar, #TabsLibrary
