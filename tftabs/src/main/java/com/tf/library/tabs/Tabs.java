@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.tf.library.tabs.example.R;
-
 import java.util.ArrayList;
 
 public class Tabs extends LinearLayout {

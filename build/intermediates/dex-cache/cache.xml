@@ -2,32 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/jars/classes.jar"
+        jar="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/example/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
         jumboMode="false"
-        revision="21.0.2"
-        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
-        <dex dex="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/app/build/intermediates/pre-dexed/debug/classes-ab96c4720c5af8dbe1a26a5be53b5da84bca9f45.jar" />
+        revision="22.0.1"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/example/build/intermediates/pre-dexed/debug/classes-7a0157e4e3d8a08edef9536b59deb4aab801f306.jar" />
     </item>
     <item
-        jar="/home/kamran/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
+        jar="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/example/build/intermediates/exploded-aar/tf-tabs-android/tftabs/unspecified/jars/classes.jar"
         jumboMode="false"
-        revision="21.0.2"
-        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
-        <dex dex="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-c550f6a49f6fd5edaca7cf56d808d8a05db640e1.jar" />
+        revision="22.0.1"
+        sha1="a45bf3748133a1a1dbd069e9b2f8533eab55a57e">
+        <dex dex="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/example/build/intermediates/pre-dexed/debug/classes-0ea7008fbbc3de166c42e27f5d6e789ab3a4310f.jar" />
     </item>
     <item
-        jar="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/libs/internal_impl-21.0.0.jar"
+        jar="/home/kamran/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
         jumboMode="false"
-        revision="21.0.2"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
-        <dex dex="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-e157e46293a6f2afdd2802f581f0686eb73d9007.jar" />
+        revision="22.0.1"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/example/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-b57946fea04f317c693218cdeb6200baa1a5ab45.jar" />
     </item>
     <item
-        jar="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/jars/classes.jar"
+        jar="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/example/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars/classes.jar"
         jumboMode="false"
-        revision="21.0.2"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
-        <dex dex="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/app/build/intermediates/pre-dexed/debug/classes-99a3e2a58803b17faaa37bb4af0dadcab351d25d.jar" />
+        revision="22.0.1"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/example/build/intermediates/pre-dexed/debug/classes-4a9bf0165e633e82060926f6239a01a8e39aa741.jar" />
+    </item>
+    <item
+        jar="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/example/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/home/kamran/Documents/Development/Repositories/Kamran/tf-tabs-android/example/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-51d87df560a893eb96363a037e6ef38a6e735082.jar" />
     </item>
 
 </items>
