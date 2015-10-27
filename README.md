@@ -7,12 +7,12 @@ A clone of `ActionBarTabs` in Android but is compatible with `Toolbar`
 
 You need to copy the following files from the given example code into your project:
 
-    src/com.tf.library.tabs.Tabs.java
+    src/com.tf.library.tabs.TabsHolder.java
     res/layout/tab.xml
     
 Add it in your layout xml file:
 
-    <com.tf.library.tabs.Tabs
+    <com.tf.library.tabs.TabsHolder
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -28,9 +28,7 @@ Add a few lines in your activity code:
     tabs.setTitleColor(getResources().getColor(android.R.color.black));
     tabs.setSelectionColor(getResources().getColor(R.color.primary_material_dark));
 
-
-    // When swiping between different sections, select the corresponding
-    // tab.
+    // When swiping between different sections, select the corresponding tab.
     mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
     @Override
         public void onPageSelected(int position) {

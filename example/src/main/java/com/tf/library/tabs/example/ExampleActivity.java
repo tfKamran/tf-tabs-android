@@ -5,14 +5,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tf.library.tabs.Tabs;
+import com.tf.library.tabs.TabsHolder;
 
 import java.util.Locale;
 
@@ -33,6 +32,7 @@ public class ExampleActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager mViewPager;
+    private TabsHolder tabs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,18 +51,16 @@ public class ExampleActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         // Set up the tabs
-        final Tabs tabs = (Tabs) findViewById(R.id.tabs);
+        tabs = (TabsHolder) findViewById(R.id.tabs);
         tabs.setViewPager(mViewPager);
-    
-	// Optionally setup the colors
+
+        // Optionally setup the colors
         tabs.setBackgroundColor(getResources().getColor(R.color.primary_material_light));
         tabs.setTitleColor(getResources().getColor(android.R.color.black));
         tabs.setSelectionColor(getResources().getColor(R.color.primary_material_dark));
 
-
-        // When swiping between different sections, select the corresponding
-        // tab.
-        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+        // When swiping between different sections, select the corresponding tab.
+        mViewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
                 tabs.setCurrentTab(position);

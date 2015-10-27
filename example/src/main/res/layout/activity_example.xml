@@ -9,7 +9,7 @@
         android:layout_height="50dp"
         android:background="@color/primary_material_light"/>
 
-    <com.tf.library.tabs.Tabs
+    <com.tf.library.tabs.TabsHolder
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
