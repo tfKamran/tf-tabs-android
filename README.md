@@ -32,10 +32,10 @@ Add a few lines in your activity code:
     // When swiping between different sections, select the corresponding
     // tab.
     mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-	@Override
-	public void onPageSelected(int position) {
-	    tabs.setCurrentTab(position);
-	}
+    @Override
+        public void onPageSelected(int position) {
+            tabs.setCurrentTab(position);
+        }
     });
     
 And you're done!
