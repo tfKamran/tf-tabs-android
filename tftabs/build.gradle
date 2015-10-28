@@ -23,3 +23,30 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
 }
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'tf-tabs-android'
+
+    publishedGroupId = 'com.tf.library.tabs'
+    libraryName = 'tfTabs'
+    artifact = 'tftabs'
+
+    libraryDescription = 'A wrapper for Facebook Native Like Button (LikeView) on Android'
+
+    siteUrl = 'https://github.com/tfKamran/tf-tabs-android'
+    gitUrl = 'https://github.com/tfKamran/tf-tabs-android.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'tfKamran'
+    developerName = 'Kamran Ahmed Ansari'
+    developerEmail = 'team.radiant@gmail.com'
+
+    licenseName = 'The MIT License (MIT)'
+    licenseUrl = 'https://github.com/tfKamran/tf-tabs-android/blob/master/LICENSE'
+    allLicenses = ["MIT"]
+
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+}
