@@ -11,6 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6ed2a3da-891a-458a-87a9-cb4b08a081b3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+<<<<<<< HEAD
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+>>>>>>> d0474e5170a37a6855bdce711d977b238016cba3
     </list>
     <ignored path="tf-tabs-android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,8 +79,13 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.3423913">
               <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+=======
+            <state vertical-scroll-proportion="0.5380435">
+              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+>>>>>>> d0474e5170a37a6855bdce711d977b238016cba3
               <folding />
             </state>
           </provider>
@@ -3073,8 +3083,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.3423913">
           <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+=======
+        <state vertical-scroll-proportion="0.5380435">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+>>>>>>> d0474e5170a37a6855bdce711d977b238016cba3
           <folding />
         </state>
       </provider>
