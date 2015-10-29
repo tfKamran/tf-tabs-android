@@ -97,15 +97,15 @@
     <orderEntry type="library" exported="" name="icu4j-53.1" level="project" />
     <orderEntry type="library" exported="" name="accessibility-test-framework-1.0" level="project" />
     <orderEntry type="library" exported="" name="robolectric-resources-3.0" level="project" />
+    <orderEntry type="library" exported="" name="asm-commons-5.0.1" level="project" />
     <orderEntry type="library" exported="" name="ant-launcher-1.8.0" level="project" />
     <orderEntry type="library" exported="" name="robolectric-annotations-3.0" level="project" />
-    <orderEntry type="library" exported="" name="asm-commons-5.0.1" level="project" />
-    <orderEntry type="library" exported="" name="asm-tree-5.0.1" level="project" />
     <orderEntry type="library" exported="" name="sqlite4java-0.282" level="project" />
+    <orderEntry type="library" exported="" name="asm-tree-5.0.1" level="project" />
     <orderEntry type="library" exported="" name="asm-5.0.1" level="project" />
     <orderEntry type="library" exported="" name="shadows-core-3.0" level="project" />
-    <orderEntry type="library" exported="" name="robolectric-utils-3.0" level="project" />
     <orderEntry type="library" exported="" name="asm-analysis-5.0.1" level="project" />
+    <orderEntry type="library" exported="" name="robolectric-utils-3.0" level="project" />
     <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="vtd-xml-2.11" level="project" />
     <orderEntry type="library" exported="" name="junit-4.8.2" level="project" />
