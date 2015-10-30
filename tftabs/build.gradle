@@ -9,8 +9,6 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-
-        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -18,16 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    dexOptions {
-        javaMaxHeapSize "4g"
-    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:3.0'
     compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'org.robolectric:robolectric:3.0'
 }
 
 ext {
@@ -38,7 +33,7 @@ ext {
     libraryName = 'tfTabs'
     artifact = 'tftabs'
 
-    libraryDescription = 'A wrapper for Facebook Native Like Button (LikeView) on Android'
+    libraryDescription = 'A clone of `ActionBarTabs` in Android but is compatible with `Toolbar`'
 
     siteUrl = 'https://github.com/tfKamran/tf-tabs-android'
     gitUrl = 'https://github.com/tfKamran/tf-tabs-android.git'
