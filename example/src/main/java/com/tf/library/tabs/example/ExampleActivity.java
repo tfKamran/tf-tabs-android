@@ -55,7 +55,7 @@ public class ExampleActivity extends AppCompatActivity {
         tabsHolder = (TabsHolder) findViewById(R.id.tabs);
         tabsHolder.setViewPager(mViewPager);
 
-        // Optionally setup the colors
+        // Optionally setup the colors programmatically
         tabsHolder.setBackgroundColor(getResources().getColor(R.color.toolbar_color));
         tabsHolder.setTitleColor(Color.WHITE);
         tabsHolder.setSelectionColor(getResources().getColor(R.color.accent_color));
