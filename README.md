@@ -20,26 +20,30 @@ Or you may copy the following files from the given example code into your projec
 Add it in your layout xml file:
 
     <com.tf.library.tabs.TabsHolder
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            app:backgroundColor="@color/toolbar_color"
+            app:titleColor="@android:color/white"
+            app:selectionColor="@color/accent_color" />
 
 Add a few lines in your activity code:
 
     // Set up the tabs
-    final Tabs tabs = (Tabs) findViewById(R.id.tabs);
-    tabs.setViewPager(mViewPager);
-    
-    // Optionally setup the colors
-    tabs.setBackgroundColor(getResources().getColor(R.color.primary_material_light));
-    tabs.setTitleColor(getResources().getColor(android.R.color.black));
-    tabs.setSelectionColor(getResources().getColor(R.color.primary_material_dark));
+    tabsHolder = (TabsHolder) findViewById(R.id.tabs);
+    tabsHolder.setViewPager(mViewPager);
+
+    // Optionally setup the colors programmatically
+    tabsHolder.setBackgroundColor(getResources().getColor(R.color.toolbar_color));
+    tabsHolder.setTitleColor(Color.WHITE);
+    tabsHolder.setSelectionColor(getResources().getColor(R.color.accent_color));
 
     // When swiping between different sections, select the corresponding tab.
-    mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-    @Override
+    mViewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+        @Override
         public void onPageSelected(int position) {
-            tabs.setCurrentTab(position);
+            tabsHolder.setCurrentTabIndex(position);
         }
     });
     
