@@ -68,14 +68,9 @@ public class TabTest {
 
     @Test
     public void changingTabSelection_shouldReflectOnUI() {
-        int selectionColor = RuntimeEnvironment.application.getResources().getColor(R.color.primary_material_light);
-
-        Drawable selectionDrawable = new ColorDrawable(selectionColor);
-
-        tabsHolder.setSelectionColor(selectionColor);
         tabsHolder.setCurrentTabIndex(0);
 
-        assertEquals(selectionDrawable, tabsHolder.getChildAt(0).findViewById(R.id.selection).getBackground());
+        assertEquals(View.VISIBLE, tabsHolder.getChildAt(0).findViewById(R.id.selection).getVisibility());
     }
 
     @Test
@@ -91,7 +86,7 @@ public class TabTest {
 
     @Test
     public void changingTitleColor_shouldReflectOnUI() {
-        int titleColor = RuntimeEnvironment.application.getResources().getColor(R.color.primary_material_light);
+        int titleColor = Color.BLACK;
 
         tabsHolder.setTitleColor(titleColor);
 
@@ -100,7 +95,7 @@ public class TabTest {
 
     @Test
     public void changingSelectionColor_shouldReflectOnUI() {
-        int selectionColor = RuntimeEnvironment.application.getResources().getColor(R.color.primary_material_light);
+        int selectionColor = Color.RED;
 
         Drawable selectionDrawable = new ColorDrawable(selectionColor);
 
