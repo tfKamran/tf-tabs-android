@@ -8,6 +8,8 @@ import android.view.View;
 public interface Tab {
     View getView();
 
+    boolean isSelected();
+
     void setSelected(boolean selected);
 
     CharSequence getTitle();

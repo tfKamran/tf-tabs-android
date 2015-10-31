@@ -1,6 +1,8 @@
 package com.tf.library.tabs;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 
 public class TabsHolder extends LinearLayout {
     private Context context;
+    private ViewPager pager;
     private ArrayList<Tab> tabs;
     private int backgroundColor;
     private int selectionColor;
@@ -25,6 +28,24 @@ public class TabsHolder extends LinearLayout {
     public TabsHolder(Context context, AttributeSet attrs) {
         super(context, attrs);
 
+        TypedArray typedArray = context.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.TabsHolder,
+                0, 0);
+
+        try {
+            setTitleColor(attrs.getAttributeIntValue(R.styleable.TabsHolder_titleColor, Color.TRANSPARENT));
+
+            setBackgroundColor(attrs.getAttributeIntValue(R.styleable.TabsHolder_backgroundColor, Color.TRANSPARENT));
+
+            setBackgroundColor(attrs.getAttributeIntValue(R.styleable.TabsHolder_selectionColor, Color.TRANSPARENT));
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            typedArray.recycle();
+        }
+
         initialize(context);
     }
 
@@ -35,6 +56,8 @@ public class TabsHolder extends LinearLayout {
     }
 
     public void setViewPager(ViewPager pager) {
+        this.pager = pager;
+
         int count = pager.getAdapter().getCount();
         tabs = new ArrayList<>(count);
 
@@ -51,10 +74,22 @@ public class TabsHolder extends LinearLayout {
         }
     }
 
-    public void setCurrentTab(int position) {
+    public int getCurrentTabIndex() {
+        int count = tabs.size();
+        for (int index = 0; index < count; index++)
+            if (tabs.get(index).isSelected())
+                return index;
+
+        return -1;
+    }
+
+    public void setCurrentTabIndex(int position) {
         int count = tabs.size();
         for (int index = 0; index < count; index++)
             tabs.get(index).setSelected(index == position);
+
+        if (pager.getCurrentItem() != position)
+            pager.setCurrentItem(position);
     }
 
     public void setBackgroundColor(int color) {
@@ -80,8 +115,9 @@ public class TabsHolder extends LinearLayout {
 
     private class TabView implements Tab {
         private View tabView;
+        private boolean selected;
 
-        public TabView(Context context, final int position, final ViewPager pager) {
+        public TabView(Context context, final int position, ViewPager pager) {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             tabView = layoutInflater.inflate(R.layout.tab, null);
 
@@ -90,7 +126,7 @@ public class TabsHolder extends LinearLayout {
             tabView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    pager.setCurrentItem(position);
+                    TabsHolder.this.pager.setCurrentItem(position);
                 }
             });
         }
@@ -101,7 +137,14 @@ public class TabsHolder extends LinearLayout {
         }
 
         @Override
+        public boolean isSelected() {
+            return selected;
+        }
+
+        @Override
         public void setSelected(boolean selected) {
+            this.selected = selected;
+
             if (selected)
                 tabView.findViewById(R.id.selection).setVisibility(View.VISIBLE);
             else
