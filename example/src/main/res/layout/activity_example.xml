@@ -1,19 +1,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/primary_material_light"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_color"
+        tools:style="@style/AppToolbarTheme" />
 
     <com.tf.library.tabs.TabsHolder
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"/>
+        android:layout_below="@+id/toolbar"
+        app:backgroundColor="@color/toolbar_color"
+        app:titleColor="@android:color/white"
+        app:selectionColor="@color/accent_color" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
@@ -21,4 +26,5 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/tabs"
         tools:context=".ExampleActivity" />
+
 </RelativeLayout>

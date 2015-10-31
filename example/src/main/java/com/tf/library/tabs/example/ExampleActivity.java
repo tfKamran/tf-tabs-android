@@ -1,5 +1,6 @@
 package com.tf.library.tabs.example;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -32,7 +33,7 @@ public class ExampleActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager mViewPager;
-    private TabsHolder tabs;
+    private TabsHolder tabsHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,19 +52,19 @@ public class ExampleActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         // Set up the tabs
-        tabs = (TabsHolder) findViewById(R.id.tabs);
-        tabs.setViewPager(mViewPager);
+        tabsHolder = (TabsHolder) findViewById(R.id.tabs);
+        tabsHolder.setViewPager(mViewPager);
 
         // Optionally setup the colors
-        tabs.setBackgroundColor(getResources().getColor(R.color.primary_material_light));
-        tabs.setTitleColor(getResources().getColor(android.R.color.black));
-        tabs.setSelectionColor(getResources().getColor(R.color.primary_material_dark));
+        tabsHolder.setBackgroundColor(getResources().getColor(R.color.toolbar_color));
+        tabsHolder.setTitleColor(Color.WHITE);
+        tabsHolder.setSelectionColor(getResources().getColor(R.color.accent_color));
 
         // When swiping between different sections, select the corresponding tab.
         mViewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
-                tabs.setCurrentTab(position);
+                tabsHolder.setCurrentTabIndex(position);
             }
         });
     }
@@ -103,7 +104,7 @@ public class ExampleActivity extends AppCompatActivity {
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
+     * one of the sections/tabsHolder/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
