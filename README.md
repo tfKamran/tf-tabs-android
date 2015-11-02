@@ -9,7 +9,7 @@ A clone of `ActionBarTabs` in Android but is compatible with `Toolbar`
 
 You may get this library by adding the following in the dependency section of your `build.gradle` file:
 
-    compile 'com.tf.library.tabs:tftabs:1.0.1'
+    compile 'com.tf.library.tabs:tftabs:1.1.0'
 
 Or you may copy the following files from the given example code into your project:
 
@@ -20,13 +20,14 @@ Or you may copy the following files from the given example code into your projec
 Add it in your layout xml file:
 
     <com.tf.library.tabs.TabsHolder
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/toolbar"
-            app:backgroundColor="@color/toolbar_color"
-            app:titleColor="@android:color/white"
-            app:selectionColor="@color/accent_color" />
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        app:backgroundColor="@color/toolbar_color"
+        app:titleColor="@android:color/white"
+        app:titleInactiveColor="@color/accent_color"
+        app:selectionColor="@color/accent_color" />
 
 Add a few lines in your activity code:
 
@@ -37,6 +38,7 @@ Add a few lines in your activity code:
     // Optionally setup the colors programmatically
     tabsHolder.setBackgroundColor(getResources().getColor(R.color.toolbar_color));
     tabsHolder.setTitleColor(Color.WHITE);
+    tabsHolder.setTitleInactiveColor(getResources().getColor(R.color.accent_color));
     tabsHolder.setSelectionColor(getResources().getColor(R.color.accent_color));
 
     // When swiping between different sections, select the corresponding tab.
