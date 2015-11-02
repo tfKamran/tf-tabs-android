@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/toolbar_color"
-        tools:style="@style/AppToolbarTheme" />
+        android:theme="@style/AppToolbarTheme" />
 
     <com.tf.library.tabs.TabsHolder
         android:id="@+id/tabs"
@@ -18,6 +18,7 @@
         android:layout_below="@+id/toolbar"
         app:backgroundColor="@color/toolbar_color"
         app:titleColor="@android:color/white"
+        app:titleInactiveColor="@color/accent_color"
         app:selectionColor="@color/accent_color" />
 
     <android.support.v4.view.ViewPager

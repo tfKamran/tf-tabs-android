@@ -58,6 +58,7 @@ public class ExampleActivity extends AppCompatActivity {
         // Optionally setup the colors programmatically
         tabsHolder.setBackgroundColor(getResources().getColor(R.color.toolbar_color));
         tabsHolder.setTitleColor(Color.WHITE);
+        tabsHolder.setTitleInactiveColor(getResources().getColor(R.color.accent_color));
         tabsHolder.setSelectionColor(getResources().getColor(R.color.accent_color));
 
         // When swiping between different sections, select the corresponding tab.
