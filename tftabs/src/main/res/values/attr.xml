@@ -3,6 +3,7 @@
     <declare-styleable name="TabsHolder">
         <attr name="backgroundColor" format="color" />
         <attr name="titleColor" format="color" />
+        <attr name="titleInactiveColor" format="color" />
         <attr name="selectionColor" format="color" />
     </declare-styleable>
 </resources>

@@ -16,6 +16,7 @@ import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotSame;
 import static junit.framework.Assert.assertTrue;
 
 /**
@@ -91,6 +92,25 @@ public class TabTest {
         tabsHolder.setTitleColor(titleColor);
 
         assertEquals(titleColor, ((TextView) tabsHolder.getChildAt(0).findViewById(R.id.lblTitle)).getTextColors().getDefaultColor());
+    }
+
+    @Test
+    public void changingTitleInactiveColor_shouldReflectOnUI() {
+        int titleInactiveColor = Color.BLACK;
+
+        tabsHolder.setTitleInactiveColor(titleInactiveColor);
+
+        assertEquals(titleInactiveColor, ((TextView) tabsHolder.getChildAt(1).findViewById(R.id.lblTitle)).getTextColors().getDefaultColor());
+    }
+
+    @Test
+    public void changingTitleColor_shouldNotReflectOnInactiveTabs() {
+        int titleColor = Color.BLACK;
+
+        tabsHolder.setTitleInactiveColor(Color.WHITE);
+        tabsHolder.setTitleColor(titleColor);
+
+        assertTrue(titleColor != ((TextView) tabsHolder.getChildAt(1).findViewById(R.id.lblTitle)).getTextColors().getDefaultColor());
     }
 
     @Test
