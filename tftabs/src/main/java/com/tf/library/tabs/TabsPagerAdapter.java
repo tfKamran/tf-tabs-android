@@ -15,5 +15,7 @@ public abstract class TabsPagerAdapter extends FragmentStatePagerAdapter {
 
     public abstract Drawable getPageIcon(int position);
 
-    public abstract Drawable getPageInactiveIcon(int position);
+    public Drawable getPageInactiveIcon(int position) {
+        return getPageIcon(position);
+    }
 }

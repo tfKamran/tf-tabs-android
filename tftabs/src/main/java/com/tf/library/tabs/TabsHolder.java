@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -168,16 +169,46 @@ public class TabsHolder extends LinearLayout {
     }
 
     private class TabView implements Tab {
+        private ImageView imageIcon;
+        private TextView lblTitle;
+        private View selectionView;
         private View tabView;
-        private boolean selected;
 
-        public TabView(Context context, final int position, ViewPager pager) {
-            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            tabView = layoutInflater.inflate(R.layout.tab, null);
+        private boolean selected;
+        private int position;
+
+        public TabView(Context context, int position, ViewPager pager) {
+            this.position = position;
+
+            inflateAndInitializeViews(context);
+
+            setupViewAttributes(pager);
+
+            setupListeners();
+        }
+
+        private void inflateAndInitializeViews(Context context) {
+            tabView = LayoutInflater.from(context).inflate(R.layout.tab, null);
+
+            imageIcon = (ImageView) tabView.findViewById(R.id.imageIcon);
+            selectionView = tabView.findViewById(R.id.selection);
+            lblTitle = (TextView) tabView.findViewById(R.id.lblTitle);
+        }
+
+        private void setupViewAttributes(ViewPager pager) {
+            if (pager.getAdapter() instanceof TabsPagerAdapter) {
+                imageIcon.setVisibility(View.VISIBLE);
+
+                imageIcon.setImageDrawable(((TabsPagerAdapter) pager.getAdapter()).getPageIcon(position));
+            } else {
+                imageIcon.setVisibility(View.GONE);
+            }
 
             setTitle(pager.getAdapter().getPageTitle(position));
+        }
 
-            tabView.setOnClickListener(new View.OnClickListener() {
+        private void setupListeners() {
+            tabView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     TabsHolder.this.pager.setCurrentItem(position);
@@ -205,24 +236,33 @@ public class TabsHolder extends LinearLayout {
         private void invalidateTabView(boolean selected) {
             if (selected) {
                 setTitleColor(TabsHolder.this.getTitleColor());
-
-                tabView.findViewById(R.id.selection).setVisibility(View.VISIBLE);
+                selectionView.setVisibility(View.VISIBLE);
             }
             else {
                 setTitleColor(TabsHolder.this.getTitleInactiveColor());
+                selectionView.setVisibility(View.GONE);
+            }
 
-                tabView.findViewById(R.id.selection).setVisibility(View.GONE);
+            if (pager.getAdapter() instanceof TabsPagerAdapter) {
+                imageIcon.setVisibility(View.VISIBLE);
+
+                TabsPagerAdapter tabsPagerAdapter = (TabsPagerAdapter) pager.getAdapter();
+                imageIcon.setImageDrawable(selected
+                        ? tabsPagerAdapter.getPageIcon(position)
+                        : tabsPagerAdapter.getPageInactiveIcon(position));
+            } else {
+                imageIcon.setVisibility(View.GONE);
             }
         }
 
         @Override
         public CharSequence getTitle() {
-            return ((TextView) tabView.findViewById(R.id.lblTitle)).getText();
+            return lblTitle.getText();
         }
 
         @Override
         public void setTitle(CharSequence title) {
-            ((TextView) tabView.findViewById(R.id.lblTitle)).setText(title);
+            lblTitle.setText(title);
         }
 
         @Override
@@ -232,12 +272,12 @@ public class TabsHolder extends LinearLayout {
 
         @Override
         public void setTitleColor(int color) {
-            ((TextView) tabView.findViewById(R.id.lblTitle)).setTextColor(color);
+            lblTitle.setTextColor(color);
         }
 
         @Override
         public void setSelectionColor(int color) {
-            tabView.findViewById(R.id.selection).setBackgroundColor(color);
+            selectionView.setBackgroundColor(color);
         }
     }
 }

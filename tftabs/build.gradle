@@ -8,7 +8,7 @@ android {
         minSdkVersion 8
         targetSdkVersion 23
         versionCode 3
-        versionName "1.1.0"
+        versionName "2.0.0"
     }
     buildTypes {
         release {
@@ -38,7 +38,7 @@ ext {
     siteUrl = 'https://github.com/tfKamran/tf-tabs-android'
     gitUrl = 'https://github.com/tfKamran/tf-tabs-android.git'
 
-    libraryVersion = '1.1.0'
+    libraryVersion = '2.0.0'
 
     developerId = 'tfKamran'
     developerName = 'Kamran Ahmed Ansari'
