@@ -1,6 +1,8 @@
 package com.tf.library.tabs.example;
 
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.tf.library.tabs.TabsHolder;
+import com.tf.library.tabs.TabsPagerAdapter;
 
 import java.util.Locale;
 
@@ -58,7 +61,7 @@ public class ExampleActivity extends AppCompatActivity {
         // Optionally setup the colors programmatically
         tabsHolder.setBackgroundColor(getResources().getColor(R.color.toolbar_color));
         tabsHolder.setTitleColor(Color.WHITE);
-        tabsHolder.setTitleInactiveColor(getResources().getColor(R.color.accent_color));
+        tabsHolder.setTitleInactiveColor(Color.GRAY);
         tabsHolder.setSelectionColor(getResources().getColor(R.color.accent_color));
 
         // When swiping between different sections, select the corresponding tab.
@@ -107,10 +110,24 @@ public class ExampleActivity extends AppCompatActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabsHolder/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public class SectionsPagerAdapter extends TabsPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
+        }
+
+        @Override
+        public Drawable getPageIcon(int position) {
+            return getDrawable(R.drawable.ic_launcher);
+        }
+
+        @Override
+        public Drawable getPageInactiveIcon(int position) {
+            Drawable pageIcon = getDrawable(R.drawable.ic_launcher).mutate();
+
+            pageIcon.setColorFilter(Color.BLUE, PorterDuff.Mode.MULTIPLY);
+
+            return pageIcon;
         }
 
         @Override
