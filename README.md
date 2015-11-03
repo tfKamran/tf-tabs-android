@@ -9,7 +9,7 @@ A clone of `ActionBarTabs` in Android but is compatible with `Toolbar`
 
 You may get this library by adding the following in the dependency section of your `build.gradle` file:
 
-    compile 'com.tf.library.tabs:tftabs:1.1.0'
+    compile 'com.tf.library.tabs:tftabs:2.0.0'
 
 Or you may copy the following files from the given example code into your project:
 
@@ -26,7 +26,7 @@ Add it in your layout xml file:
         android:layout_below="@+id/toolbar"
         app:backgroundColor="@color/toolbar_color"
         app:titleColor="@android:color/white"
-        app:titleInactiveColor="@color/accent_color"
+        app:titleInactiveColor="@android:color/darker_gray"
         app:selectionColor="@color/accent_color" />
 
 Add a few lines in your activity code:
@@ -38,7 +38,7 @@ Add a few lines in your activity code:
     // Optionally setup the colors programmatically
     tabsHolder.setBackgroundColor(getResources().getColor(R.color.toolbar_color));
     tabsHolder.setTitleColor(Color.WHITE);
-    tabsHolder.setTitleInactiveColor(getResources().getColor(R.color.accent_color));
+    tabsHolder.setTitleInactiveColor(Color.GRAY);
     tabsHolder.setSelectionColor(getResources().getColor(R.color.accent_color));
 
     // When swiping between different sections, select the corresponding tab.
@@ -48,7 +48,33 @@ Add a few lines in your activity code:
             tabsHolder.setCurrentTabIndex(position);
         }
     });
-    
+
+And if you wish to have icons on your tabs:
+
+    public class SectionsPagerAdapter extends TabsPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Drawable getPageIcon(int position) {
+            return getDrawable(R.drawable.ic_launcher);
+        }
+
+        @Override
+        public Drawable getPageInactiveIcon(int position) {
+            Drawable pageIcon = getDrawable(R.drawable.ic_launcher).mutate();
+
+            pageIcon.setColorFilter(Color.BLUE, PorterDuff.Mode.MULTIPLY);
+
+            return pageIcon;
+        }
+
+        ...
+
+    }
+
 And you're done!
 
 **Note**: Before `tabs.setViewPager(mViewPager);` you must have your `FragmentPagerAdapter` in your `ViewPager`
