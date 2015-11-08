@@ -19,7 +19,8 @@
         app:backgroundColor="@color/toolbar_color"
         app:titleColor="@android:color/white"
         app:titleInactiveColor="@android:color/darker_gray"
-        app:selectionColor="@color/accent_color" />
+        app:selectionColor="@color/accent_color"
+        app:selectionVisible="true" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"

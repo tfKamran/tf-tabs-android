@@ -58,11 +58,12 @@ public class ExampleActivity extends AppCompatActivity {
         tabsHolder = (TabsHolder) findViewById(R.id.tabs);
         tabsHolder.setViewPager(mViewPager);
 
-        // Optionally setup the colors programmatically
+        // Optionally setup the colors and properties programmatically
         tabsHolder.setBackgroundColor(getResources().getColor(R.color.toolbar_color));
         tabsHolder.setTitleColor(Color.WHITE);
         tabsHolder.setTitleInactiveColor(Color.GRAY);
         tabsHolder.setSelectionColor(getResources().getColor(R.color.accent_color));
+        tabsHolder.setSelectionVisible(true);
 
         // When swiping between different sections, select the corresponding tab.
         mViewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
