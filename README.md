@@ -75,6 +75,8 @@ And if you wish to have icons on your tabs:
 
     }
 
+If you don't wish to have icons in the tabs, you may use any other derivatives of `PagerAdapter`.
+
 And you're done!
 
 **Note**: Before `tabs.setViewPager(mViewPager);` you must have your `FragmentPagerAdapter` in your `ViewPager`
