@@ -9,7 +9,7 @@ A clone of `ActionBarTabs` in Android but is compatible with `Toolbar`
 
 You may get this library by adding the following in the dependency section of your `build.gradle` file:
 
-    compile 'com.tf.library.tabs:tftabs:2.0.0'
+    compile 'com.tf.library.tabs:tftabs:2.1.0'
 
 Or you may copy the following files from the given example code into your project:
 
