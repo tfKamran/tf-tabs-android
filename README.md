@@ -27,7 +27,8 @@ Add it in your layout xml file:
         app:backgroundColor="@color/toolbar_color"
         app:titleColor="@android:color/white"
         app:titleInactiveColor="@android:color/darker_gray"
-        app:selectionColor="@color/accent_color" />
+        app:selectionColor="@color/accent_color"
+        app:selectionVisible="true" />
 
 Add a few lines in your activity code:
 
@@ -35,11 +36,12 @@ Add a few lines in your activity code:
     tabsHolder = (TabsHolder) findViewById(R.id.tabs);
     tabsHolder.setViewPager(mViewPager);
 
-    // Optionally setup the colors programmatically
+    // Optionally setup the colors and properties programmatically
     tabsHolder.setBackgroundColor(getResources().getColor(R.color.toolbar_color));
     tabsHolder.setTitleColor(Color.WHITE);
     tabsHolder.setTitleInactiveColor(Color.GRAY);
     tabsHolder.setSelectionColor(getResources().getColor(R.color.accent_color));
+    tabsHolder.setSelectionVisible(true);
 
     // When swiping between different sections, select the corresponding tab.
     mViewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
