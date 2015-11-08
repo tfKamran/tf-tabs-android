@@ -23,6 +23,7 @@ public class TabsHolder extends LinearLayout {
     private int titleInactiveColor;
     private int backgroundColor;
     private int selectionColor;
+    private boolean selectionVisible;
 
     public TabsHolder(Context context) {
         super(context);
@@ -40,16 +41,14 @@ public class TabsHolder extends LinearLayout {
 
         try {
             setTitleColor(typedArray.getInt(R.styleable.TabsHolder_titleColor, Color.TRANSPARENT));
-            Log.d(TAG, "Title color " + String.valueOf(titleColor));
 
             setTitleInactiveColor(typedArray.getInt(R.styleable.TabsHolder_titleInactiveColor, Color.TRANSPARENT));
-            Log.d(TAG, "Invalid title color " + String.valueOf(titleInactiveColor));
 
             setBackgroundColor(typedArray.getInt(R.styleable.TabsHolder_backgroundColor, Color.TRANSPARENT));
-            Log.d(TAG, "Background color " + String.valueOf(backgroundColor));
 
             setSelectionColor(typedArray.getInt(R.styleable.TabsHolder_selectionColor, Color.TRANSPARENT));
-            Log.d(TAG, "Selection color " + String.valueOf(selectionColor));
+
+            setSelectionVisible(typedArray.getBoolean(R.styleable.TabsHolder_selectionVisible, true));
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -168,6 +167,18 @@ public class TabsHolder extends LinearLayout {
                 tab.setSelectionColor(color);
     }
 
+    public void setSelectionVisible(boolean selectionVisible) {
+        this.selectionVisible = selectionVisible;
+
+        if (tabs != null)
+            for (Tab tab : tabs)
+                tab.setSelected(tab.isSelected());
+    }
+
+    public boolean isSelectionVisible() {
+        return selectionVisible;
+    }
+
     private class TabView implements Tab {
         private ImageView imageIcon;
         private TextView lblTitle;
@@ -236,11 +247,15 @@ public class TabsHolder extends LinearLayout {
         private void invalidateTabView(boolean selected) {
             if (selected) {
                 setTitleColor(TabsHolder.this.getTitleColor());
-                selectionView.setVisibility(View.VISIBLE);
+
+                if (isSelectionVisible())
+                    showSelection();
+                else
+                    hideSelection();
             }
             else {
                 setTitleColor(TabsHolder.this.getTitleInactiveColor());
-                selectionView.setVisibility(View.GONE);
+                hideSelection();
             }
 
             if (pager.getAdapter() instanceof TabsPagerAdapter) {
@@ -253,6 +268,14 @@ public class TabsHolder extends LinearLayout {
             } else {
                 imageIcon.setVisibility(View.GONE);
             }
+        }
+
+        private void hideSelection() {
+            selectionView.setVisibility(View.GONE);
+        }
+
+        private void showSelection() {
+            selectionView.setVisibility(View.VISIBLE);
         }
 
         @Override

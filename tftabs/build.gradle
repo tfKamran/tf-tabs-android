@@ -38,7 +38,7 @@ ext {
     siteUrl = 'https://github.com/tfKamran/tf-tabs-android'
     gitUrl = 'https://github.com/tfKamran/tf-tabs-android.git'
 
-    libraryVersion = '2.0.0'
+    libraryVersion = '2.1.0'
 
     developerId = 'tfKamran'
     developerName = 'Kamran Ahmed Ansari'
