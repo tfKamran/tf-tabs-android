@@ -69,6 +69,7 @@ public class TabTest {
 
     @Test
     public void changingTabSelection_shouldReflectOnUI() {
+        tabsHolder.setSelectionVisible(true);
         tabsHolder.setCurrentTabIndex(0);
 
         assertEquals(View.VISIBLE, tabsHolder.getChildAt(0).findViewById(R.id.selection).getVisibility());
