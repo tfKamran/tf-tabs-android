@@ -119,12 +119,12 @@ public class ExampleActivity extends AppCompatActivity {
 
         @Override
         public Drawable getPageIcon(int position) {
-            return getDrawable(R.drawable.ic_launcher);
+            return getResources().getDrawable(R.drawable.ic_launcher);
         }
 
         @Override
         public Drawable getPageInactiveIcon(int position) {
-            Drawable pageIcon = getDrawable(R.drawable.ic_launcher).mutate();
+            Drawable pageIcon = getPageIcon(position).mutate();
 
             pageIcon.setColorFilter(Color.BLUE, PorterDuff.Mode.MULTIPLY);
 
