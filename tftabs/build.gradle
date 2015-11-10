@@ -48,6 +48,6 @@ ext {
     licenseUrl = 'https://github.com/tfKamran/tf-tabs-android/blob/master/LICENSE'
     allLicenses = ["MIT"]
 
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+    apply from: 'install.gradle'
+    apply from: 'bintray.gradle'
 }
