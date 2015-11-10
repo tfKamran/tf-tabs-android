@@ -16,7 +16,6 @@ import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
 import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotSame;
 import static junit.framework.Assert.assertTrue;
 
 /**
@@ -30,7 +29,7 @@ public class TabTest {
     private TabsHolder tabsHolder;
 
     @Before
-    public void setup() {
+    public void setUp() {
         viewPager = new ViewPager(RuntimeEnvironment.application.getApplicationContext());
         viewPager.setAdapter(pagerAdapter);
 
