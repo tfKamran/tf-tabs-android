@@ -4,6 +4,7 @@ tfTabs
 [ ![Download](https://api.bintray.com/packages/tfkamran/maven/tf-tabs-android/images/download.svg) ](https://bintray.com/tfkamran/maven/tf-tabs-android/_latestVersion)
 [![Build Status](https://travis-ci.org/tfKamran/tf-tabs-android.svg?branch=master)](https://travis-ci.org/tfKamran/tf-tabs-android)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9b40dac2977445f2b38e59ebeaa88da6)](https://www.codacy.com/app/team-radiant/tf-tabs-android)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-tfTabs-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2761)
 
 A clone of `ActionBarTabs` in Android but is compatible with `Toolbar`
 
