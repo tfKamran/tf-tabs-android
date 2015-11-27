@@ -1,6 +1,8 @@
 tfTabs
 ======
 
+[![Join the chat at https://gitter.im/tfKamran/tf-tabs-android](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tfKamran/tf-tabs-android?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [ ![Download](https://api.bintray.com/packages/tfkamran/maven/tf-tabs-android/images/download.svg) ](https://bintray.com/tfkamran/maven/tf-tabs-android/_latestVersion)
 [![Build Status](https://travis-ci.org/tfKamran/tf-tabs-android.svg?branch=master)](https://travis-ci.org/tfKamran/tf-tabs-android)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9b40dac2977445f2b38e59ebeaa88da6)](https://www.codacy.com/app/team-radiant/tf-tabs-android)
