@@ -2,6 +2,7 @@ package com.tf.library.tabs;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.database.DataSetObserver;
 import android.graphics.Color;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
@@ -195,6 +196,8 @@ public class TabsHolder extends LinearLayout {
             setupViewAttributes(pager);
 
             setupListeners();
+
+            setupObserver();
         }
 
         private void inflateAndInitializeViews(Context context) {
@@ -222,6 +225,24 @@ public class TabsHolder extends LinearLayout {
                 @Override
                 public void onClick(View v) {
                     TabsHolder.this.pager.setCurrentItem(position);
+                }
+            });
+        }
+
+        private void setupObserver() {
+            TabsHolder.this.pager.getAdapter().registerDataSetObserver(new DataSetObserver() {
+                @Override
+                public void onChanged() {
+                    super.onChanged();
+
+                    setupViewAttributes(TabsHolder.this.pager);
+                }
+
+                @Override
+                public void onInvalidated() {
+                    super.onInvalidated();
+
+                    setupViewAttributes(TabsHolder.this.pager);
                 }
             });
         }
