@@ -27,6 +27,7 @@ import static junit.framework.Assert.assertTrue;
 @Config(constants = BuildConfig.class, sdk = 21)
 public class TabTest {
 
+    private ArrayList<String> pageTitles = new ArrayList<>();
     private ViewPager viewPager;
     private TabsHolder tabsHolder;
 
@@ -160,8 +161,6 @@ public class TabTest {
 
         pageTitles.remove(pageTitles.size() - 1);
     }
-
-    private ArrayList<String> pageTitles = new ArrayList<>();
 
     private PagerAdapter pagerAdapter = new PagerAdapter() {
         @Override
