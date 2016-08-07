@@ -35,7 +35,7 @@ public class ExampleActivity extends AppCompatActivity {
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    ViewPager mViewPager;
+    private ViewPager mViewPager;
     private TabsHolder tabsHolder;
 
     @Override
