@@ -148,6 +148,19 @@ public class TabTest {
         pageTitles.set(0, originalPageTitle);
     }
 
+    @Test
+    public void addNewTab_shouldReflectOnUI() {
+        String tabTitle = "New Tab";
+        pageTitles.add(tabTitle);
+
+        pagerAdapter.notifyDataSetChanged();
+
+        String tabTitleInUI = ((TextView) tabsHolder.getChildAt(3).findViewById(R.id.lblTitle)).getText().toString();
+        assertEquals(tabTitleInUI, tabTitle);
+
+        pageTitles.remove(pageTitles.size() - 1);
+    }
+
     private ArrayList<String> pageTitles = new ArrayList<>();
 
     private PagerAdapter pagerAdapter = new PagerAdapter() {
