@@ -15,6 +15,8 @@ import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
+import java.util.ArrayList;
+
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 
@@ -30,6 +32,10 @@ public class TabTest {
 
     @Before
     public void setUp() {
+        pageTitles.add("Page 1");
+        pageTitles.add("Page 2");
+        pageTitles.add("Page 3");
+
         viewPager = new ViewPager(RuntimeEnvironment.application.getApplicationContext());
         viewPager.setAdapter(pagerAdapter);
 
@@ -125,10 +131,34 @@ public class TabTest {
         assertEquals(selectionDrawable, tabsHolder.getChildAt(0).findViewById(R.id.selection).getBackground());
     }
 
+    @Test
+    public void changingTitle_shouldReflectOnUI() {
+        String originalPageTitle = pageTitles.get(0);
+
+        String modifiedTitle = "Page Title Modified";
+        pageTitles.set(0, modifiedTitle);
+
+        pagerAdapter.notifyDataSetChanged();
+
+        String tabTitleInUI = ((TextView) tabsHolder.getChildAt(0)
+                .findViewById(R.id.lblTitle)).getText().toString();
+
+        assertEquals(tabTitleInUI, modifiedTitle);
+
+        pageTitles.set(0, originalPageTitle);
+    }
+
+    private ArrayList<String> pageTitles = new ArrayList<>();
+
     private PagerAdapter pagerAdapter = new PagerAdapter() {
         @Override
         public int getCount() {
-            return 3;
+            return pageTitles.size();
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return pageTitles.get(position);
         }
 
         @Override
