@@ -153,9 +153,9 @@ public class ExampleActivity extends AppCompatActivity {
                 case 1:
                     return getString(R.string.title_section2).toUpperCase(l);
                 case 2:
+                default:
                     return getString(R.string.title_section3).toUpperCase(l);
             }
-            return null;
         }
     }
 
