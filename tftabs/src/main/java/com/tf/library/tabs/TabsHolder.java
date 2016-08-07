@@ -68,7 +68,31 @@ public class TabsHolder extends LinearLayout {
     public void setViewPager(ViewPager pager) {
         this.pager = pager;
 
+        pager.getAdapter().registerDataSetObserver(new DataSetObserver() {
+            @Override
+            public void onChanged() {
+                super.onChanged();
+
+                recreateTabsIfRequired();
+            }
+
+            @Override
+            public void onInvalidated() {
+                super.onInvalidated();
+
+                recreateTabsIfRequired();
+            }
+        });
+
         setupTabs(pager);
+    }
+
+    private void recreateTabsIfRequired() {
+        if (pager.getAdapter().getCount() != tabs.size()) {
+            removeAllViews();
+
+            setupTabs(pager);
+        }
     }
 
     private void setupTabs(ViewPager pager) {
