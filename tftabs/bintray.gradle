@@ -27,7 +27,9 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
 
 bintray {
     Properties systemProperties = new Properties()
-    systemProperties.load(file(System.getenv("HOME") + '/.gradle/gradle.properties').newDataInputStream())
+
+    if (file(System.getenv("HOME") + '/.gradle/gradle.properties').exists())
+        systemProperties.load(file(System.getenv("HOME") + '/.gradle/gradle.properties').newDataInputStream())
 
     user = systemProperties['bintray.user']
     key = systemProperties['bintray.apikey']
