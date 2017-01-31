@@ -25,9 +25,12 @@ artifacts {
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
+Properties systemProperties = new Properties()
+systemProperties.load(file(System.getenv("HOME") + '/.gradle/gradle.properties').newDataInputStream())
+
 bintray {
-    user = System.properties['bintray.user']
-    key = System.properties['bintray.apikey']
+    user = systemProperties['bintray.user']
+    key = systemProperties['bintray.apikey']
 
     configurations = ['archives']
     pkg {
