@@ -25,10 +25,10 @@ artifacts {
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-Properties systemProperties = new Properties()
-systemProperties.load(file(System.getenv("HOME") + '/.gradle/gradle.properties').newDataInputStream())
-
 bintray {
+    Properties systemProperties = new Properties()
+    systemProperties.load(file(System.getenv("HOME") + '/.gradle/gradle.properties').newDataInputStream())
+
     user = systemProperties['bintray.user']
     key = systemProperties['bintray.apikey']
 
